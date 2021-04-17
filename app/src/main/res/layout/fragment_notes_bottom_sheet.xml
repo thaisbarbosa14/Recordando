@@ -10,7 +10,7 @@
     app:behavior_peekHeight="40dp"
     app:layout_behavior="@string/bottom_sheet_behavior"
     android:background="@color/colorPrimary"
-    tools:context=".MainActivity">
+    tools:context=".MainActivityNotes">
 
 
 
@@ -152,18 +152,17 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAlignment="textEnd"
-            android:paddingEnd="@dimen/_10sdp"
-            app:layout_constraintTop_toBottomOf="@id/etNoteTitle"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:textColor="@color/ColorWhite"
-            android:textSize="@dimen/_12ssp"
-            android:text="Pick Color"
+            android:ellipsize="end"
             android:fontFamily="@font/manrope_bold"
             android:maxLines="1"
-            android:ellipsize="end"
-            />
+            android:paddingEnd="@dimen/_10sdp"
+            android:text="Selecionar Cor"
+            android:textAlignment="textEnd"
+            android:textColor="@color/ColorWhite"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/etNoteTitle" />
     </LinearLayout>
 
     <LinearLayout
@@ -190,16 +189,15 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/etNoteTitle"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:textColor="@color/ColorWhite"
-            android:textSize="@dimen/_12ssp"
-            android:text="Add Image"
+            android:ellipsize="end"
             android:fontFamily="@font/manrope_bold"
             android:maxLines="1"
-            android:ellipsize="end"
-            />
+            android:text="Adicionar imagem"
+            android:textColor="@color/ColorWhite"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/etNoteTitle" />
 
     </LinearLayout>
 
@@ -230,16 +228,15 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/etNoteTitle"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:textColor="@color/ColorWhite"
-            android:textSize="@dimen/_12ssp"
-            android:text="Add Web Link"
+            android:ellipsize="end"
             android:fontFamily="@font/manrope_bold"
             android:maxLines="1"
-            android:ellipsize="end"
-            />
+            android:text="Adicionar Link"
+            android:textColor="@color/ColorWhite"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/etNoteTitle" />
 
     </LinearLayout>
 

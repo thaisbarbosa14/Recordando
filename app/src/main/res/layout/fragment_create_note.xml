@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimaryDark"
-    tools:context=".MainActivity">
+    tools:context=".MainActivityNotes">
 
     <ImageView
         android:id="@+id/imgBack"
@@ -90,7 +90,7 @@
             android:background="@color/ColorBlue" />
 
         <EditText
-            android:id="@+id/etNoteSubTitle"
+            android:id="@+id/nomeI"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@null"
@@ -264,7 +264,7 @@
             android:layout_width="@dimen/_24sdp"
             android:layout_height="@dimen/_24sdp"
             android:layout_gravity="center"
-            android:src="@drawable/img_bar" />
+            android:src="@drawable/ic_baseline_edit_24" />
     </FrameLayout>
 
 
