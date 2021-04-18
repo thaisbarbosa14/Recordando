@@ -7,12 +7,21 @@ apply plugin: 'com.android.application'
 
 
 
+
 android {
+    signingConfigs {
+        debug {
+            storeFile file('C:\\Users\\pedro\\Documents\\keys\\Keystore.jks')
+            storePassword '097531'
+            keyAlias 'key0'
+            keyPassword '097531'
+        }
+    }
     compileSdkVersion 30
     buildToolsVersion "30.0.3"
 
     defaultConfig {
-        applicationId "com.example.recordando"
+        applicationId "com.recordando.app"
         minSdkVersion 21
         targetSdkVersion 30
         versionCode 1
