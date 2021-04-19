@@ -45,21 +45,12 @@ class InfosActivity : AppCompatActivity() {
         Iemail = findViewById(R.id.Iemail)
         saveInf = findViewById(R.id.saveInf)
         deleteInf = findViewById(R.id.deleteInf)
-
-
-
-        val nomes = realm.where(Infos::class.java).findAll().last()
-
-        nomeI.setHint("Seu Nome:  "+ nomes?.nome)
-        idadeI.setHint("Sua Idade:  "+ nomes?.idade)
-        telefoneI.setHint("Seu telefone:  "+ nomes?.tell)
-        telefoneI2.setHint("Telefone de Emergência:  "+ nomes?.tell2)
-        Iemail.setHint("Seu Email:  "+ nomes?.email)
-
+        updateInfos()
 
 
 
         deleteInf.setOnClickListener{
+
 
         }
         saveInf.setOnClickListener {
@@ -69,6 +60,7 @@ class InfosActivity : AppCompatActivity() {
         }
 
     }
+
 
 
 
@@ -86,18 +78,31 @@ class InfosActivity : AppCompatActivity() {
 
                 if(info.nome.isNullOrEmpty()) {
                     Toast.makeText(this, "Insira um nome!", Toast.LENGTH_SHORT).show()
+                    startActivity(Intent(this, InfosActivity::class.java))
+                    finish()
 
-                }else if (info.idade == null) {
+                }else if (info.idade.isNullOrEmpty()) {
                     Toast.makeText(this, "Insira a idade", Toast.LENGTH_SHORT).show()
+                    startActivity(Intent(this, InfosActivity::class.java))
+                    finish()
 
                 }else if (info.tell.isNullOrEmpty()) {
                     Toast.makeText(this, "Insira seu telefone", Toast.LENGTH_SHORT).show()
+                    startActivity(Intent(this, InfosActivity::class.java))
+                    finish()
+
 
                 }else if (info.tell2.isNullOrEmpty()) {
                     Toast.makeText(this, "Insira seu telefone de emergência", Toast.LENGTH_SHORT).show()
+                    startActivity(Intent(this, InfosActivity::class.java))
+                    finish()
+
 
                 }else if (info.email.isNullOrEmpty()) {
                     Toast.makeText(this, "Insira seu email", Toast.LENGTH_SHORT).show()
+                    startActivity(Intent(this, InfosActivity::class.java))
+                    finish()
+
 
                 }else if( android.util.Patterns.EMAIL_ADDRESS.matcher(info.email).matches()){
 
@@ -108,23 +113,25 @@ class InfosActivity : AppCompatActivity() {
                     info.tell2 = telefoneI2.text.toString()
                     info.email = Iemail.text.toString()
 
-                    val nomes = realm.where(Infos::class.java).findAll().last()
-                    nomeI.setHint("Seu Nome:  "+ nomes?.nome)
-                    idadeI.setHint("Sua Idade:  "+ nomes?.idade)
-                    telefoneI.setHint("Seu telefone:  "+ nomes?.tell)
-                    telefoneI2.setHint("Telefone de Emergência:  "+ nomes?.tell2)
-                    Iemail.setHint("Seu Email:  "+ nomes?.email)
 
                     realm.insertOrUpdate(info)
                     realm.commitTransaction()
+
+
+
+
 
                     Toast.makeText(this, "salvo", Toast.LENGTH_SHORT).show()
 
                     startActivity(Intent(this, MainActivity::class.java))
                     finish()
 
+
                 }else{
                     Toast.makeText(this, "email invalido", Toast.LENGTH_SHORT).show()
+                    startActivity(Intent(this, InfosActivity::class.java))
+                    finish()
+
 
                 }
 
@@ -133,6 +140,12 @@ class InfosActivity : AppCompatActivity() {
     }
     private fun updateInfos() {
 
+        val nomes = realm.where(Infos::class.java).findAll().last()
+        nomeI.setHint("Seu Nome:  "+ nomes?.nome)
+        idadeI.setHint("Sua Idade:  "+ nomes?.idade)
+        telefoneI.setHint("Seu telefone:  "+ nomes?.tell)
+        telefoneI2.setHint("Telefone de Emergência:  "+ nomes?.tell2)
+        Iemail.setHint("Seu Email:  "+ nomes?.email)
     }
 
 
