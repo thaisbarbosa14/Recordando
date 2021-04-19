@@ -46,7 +46,7 @@ class InfosActivity : AppCompatActivity() {
         saveInf = findViewById(R.id.saveInf)
         deleteInf = findViewById(R.id.deleteInf)
 
-        //mascaras
+
 
         val nomes = realm.where(Infos::class.java).findAll().last()
 
